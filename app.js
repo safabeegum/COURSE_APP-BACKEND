@@ -17,8 +17,8 @@ app.get("/",(req,res) => {
 
 app.post("/add",(req,res) => {
     let input = req.body
-    let book=new bookmodel(input)
-    book.save()
+    let course=new coursemodel(input)
+    course.save()
     res.json({status:"success"})
 
 })
@@ -33,7 +33,7 @@ app.post("/delete",(req,res) => {
 })
 
 app.get("/view",(req,res) => {
-    bookmodel.find().then(
+    coursemodel.find().then(
         (data) => {
             res.json(data)
         }
@@ -44,6 +44,6 @@ app.get("/view",(req,res) => {
     )
 })
 
-app.listen(8080,() => {
+app.listen(8081,() => {
     console.log("server started")
 })

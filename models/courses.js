@@ -3,7 +3,7 @@ const schema=mongoose.Schema(
     {
         "title":{type:String,required:true},
         "description":{type:String,required:true},
-        "date":{type:String,required:true},
+        "date":{type:Date,required:true},
         "duration":{type:String,required:true},
         "venue":{type:String,required:true},
         "trainer":{type:String,required:true}
