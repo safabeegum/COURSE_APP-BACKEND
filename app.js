@@ -25,7 +25,16 @@ app.post("/add",(req,res) => {
 
 
 app.post("/search",(req,res) => {
-    res.send("Search Page")
+    let input = req.body
+    coursemodel.find(input).then(
+        (data) => {
+            res.json(data)
+        }
+    ).catch(
+        (error) => {
+            res.json(error)
+        }
+    )
 })
 
 app.post("/delete",(req,res) => {
